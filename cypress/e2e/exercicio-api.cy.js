@@ -63,6 +63,7 @@ describe('Testes da Funcionalidade Usuários', () => {
      });
 
      it('Deve editar um usuário previamente cadastrado', () => {
+          let email = `joaopedro` + `${Math.floor(Math.random() * 100000000)}` + `@gmail.com`
           cy.request('http://localhost:3000/usuarios').then(response =>{
                let id = response.body.usuarios[0]._id
                cy.request({
@@ -71,8 +72,8 @@ describe('Testes da Funcionalidade Usuários', () => {
                     headers: {authorization: token},
                     body: 
                          {
-                         "nome": "Fulano da Silva",
-                         "email": "beltrano@qa.com.br",
+                         "nome": "joao pedro3402173",
+                         "email": email,
                          "password": "teste",
                          "administrador": "true"
                          }
