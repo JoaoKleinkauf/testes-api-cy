@@ -1,7 +1,8 @@
 const Joi = require ('joi')
 
 const contratoUsuario = Joi.object({
-    usuario: Joi.array().items({
+    quantidade: Joi.number(), 
+    usuarios: Joi.array().items({
         nome: Joi.string(),
         email: Joi.string(),
         password: Joi.string(),

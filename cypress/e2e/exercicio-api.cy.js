@@ -1,4 +1,5 @@
 /// <reference types="cypress" />
+import contrato from '../contracts/usuario.contract'
 
 describe('Testes da Funcionalidade Usuários', () => {
      let token
@@ -6,7 +7,7 @@ describe('Testes da Funcionalidade Usuários', () => {
           cy.token('beltrano@qa.com.br', 'teste').then(tkn => { token = tkn })
       });
 
-     it('Deve validar contrato de usuários', () => {
+     it.only('Deve validar contrato de usuários', () => {
           cy.request('http://localhost:3000/usuarios').then(response => {
                return contrato.validateAsync(response.body)
            })
